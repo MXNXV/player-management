@@ -8,14 +8,14 @@ class Player(db.Model):
 class PhysicalAttribute(db.Model):
     __tablename__ = 'physical_attributes'
     id = db.Column(db.Integer, primary_key=True)
-    player_api_id = db.Column(db.Integer, db.ForeignKey('players.player_api_id'))
+    player_api_id = db.Column(db.Integer, db.ForeignKey('players.player_api_id_x'))
     height = db.Column(db.Numeric(5, 2))
     weight = db.Column(db.Numeric(5, 2))
 
 class PerformanceAttribute(db.Model):
     __tablename__ = 'performance_attributes'
     player_fifa_api_id = db.Column(db.Integer, primary_key=True)
-    player_api_id = db.Column(db.Integer, db.ForeignKey('players.player_api_id'))
+    player_api_id = db.Column(db.Integer, db.ForeignKey('players.player_api_id_x'))
     overall_rating = db.Column(db.Numeric(3, 1))
     potential = db.Column(db.Numeric(3, 1))
     preferred_foot = db.Column(db.String(50))
