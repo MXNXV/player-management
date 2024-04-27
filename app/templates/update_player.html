@@ -1,0 +1,11 @@
+<!-- update_player.html -->
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h2>Update Player</h2>
+    <form action="{{ url_for('player_bp.update_player', id=player.player_api_id_x) }}" method="post">
+        <label for="name">Player Name:</label>
+        <input type="text" id="name" name="name" value="{{ player.player_name }}" required>
+        <button type="submit" data-action="update">Update</button>
+    </form>
+{% endblock %}

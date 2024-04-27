@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h2>Performance Attributes for {{ player.player_name }}</h2>
+    
+    <div id="visualization"></div>
+   
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script>
+        // JavaScript code to generate Plotly visualization
+        var data = [{
+            x: ['Overall Rating', 'Potential', 'Agility', 'Balance', 'Shot Power', 'Stamina', 'Strength', 'Long Shots', 'Aggression', 'Penalties'],
+            y: [
+                {{ performance_attributes.overall_rating }}, 
+                {{ performance_attributes.potential }}, 
+                {{ performance_attributes.agility }}, 
+                {{ performance_attributes.balance }}, 
+                {{ performance_attributes.shot_power }}, 
+                {{ performance_attributes.stamina }}, 
+                {{ performance_attributes.strength }}, 
+                {{ performance_attributes.long_shots }}, 
+                {{ performance_attributes.aggression }}, 
+                {{ performance_attributes.penalties }}
+            ],
+            mode: 'markers',
+            type: 'bar'
+        }];
+    
+        var layout = {
+            title: 'Performance Attributes Bar Graph',
+            xaxis: { title: 'Attribute' },
+            yaxis: { title: 'Value' }
+        };
+    
+        Plotly.newPlot('visualization', data, layout);
+    </script>
+
+{% endblock %}

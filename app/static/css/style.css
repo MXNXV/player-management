@@ -1,0 +1,82 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+header, footer {
+    background-color: #333;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    opacity: 0.8;
+}
+
+
+.main-nav .nav-list {
+    list-style: none;
+    padding: 0;
+}
+
+.main-nav .nav-list li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.main-nav .nav-list a {
+    color: white;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.main-nav .nav-list a:hover {
+    text-decoration: underline;
+}
+
+
+
+main {
+    padding: 15px;
+    padding-bottom: 60px;
+}
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    margin: 4px 2px;
+    border: none;
+    cursor: pointer;
+}
+
+.button-danger {
+    background-color: #d9534f; /* Bootstrap 'danger' color */
+}
+
+.button-update {
+    background-color: #f0ad4e; /* Bootstrap 'warning' color */
+}
+button:hover {
+    opacity: 0.8;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+}

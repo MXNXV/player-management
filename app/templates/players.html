@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h2>Players List</h2>
+    <ul>
+        {% for player in players %}
+        <li>
+            <span style="display: inline-block; width: 200px;">{{ player.player_name }}</span>
+            <form action="{{ url_for('player_bp.view_performance', id=player.player_api_id_x) }}" method="get" style="display: inline-block;">
+              <button type="submit" data-action="view">View Performance</button>
+          </form>
+          <form action="{{ url_for('player_bp.view_physical', id=player.player_api_id_x) }}" method="get" style="display: inline-block;">
+            <button type="submit" data-action="view">View Physical Stats</button>
+        </form>
+            <form action="{{ url_for('player_bp.update_player_form', id=player.player_api_id_x) }}" style="display: inline-block;">
+                <button class="button button-update" type="submit" data-action="update">Update</button>
+            </form>
+            <form action="{{ url_for('player_bp.delete_player', id=player.player_api_id_x) }}" method="post" style="display: inline-block;">
+                <button class="button button-danger" type="submit" data-action="delete">Delete</button>
+            </form>
+            
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

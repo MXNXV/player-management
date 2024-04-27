@@ -1,0 +1,52 @@
+<!-- layout.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/react@16/umd/react.production.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prop-types@15/umd/prop-types.min.js"></script>
+    <!-- Dash JavaScript Files -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dash@2.16.1/dash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dash@2.16.1/dash-renderer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dash@2.16.1/dash-core-components.min.js"></script>
+    <!-- Additional JavaScript Files -->
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <style>
+        body {
+            background-image: url("static/images/bg.jpg"); 
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
+    /* background-color: rgba(255, 255, 255, 0); Adjust the alpha value (0.5) to control the translucency */
+}
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Player Management System</h1>
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li><a href="{{ url_for('player_bp.players') }}">Home</a></li>
+                <li><a href="{{ url_for('player_bp.add_player_form') }}">Add Player</a></li>
+                <!-- <li><a href="{{ url_for('player_bp.render_visualizations') }}">Visualizations</a></li> -->
+
+            </ul>
+        </nav>
+        
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>© 2024 Player Management System</p>
+    </footer>
+</body>
+</html>

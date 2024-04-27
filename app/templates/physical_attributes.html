@@ -1,0 +1,9 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2>Physical Attributes for {{ player.player_name }}</h2>
+<ul>
+    <li>Height: {{physical_attributes.height}} cm</li>
+    <li>Weight: {{physical_attributes.weight}} lbs</li>
+</ul>
+{% endblock %}
